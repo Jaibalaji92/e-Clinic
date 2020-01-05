@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-7">
+        <div class="form-group">
+                <label for="usn">Roll Number:</label>
+                <input class="form-control" type="text" name="usn" id="" (input)="onRollNumber($event)">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" (click)="onSubmit($event)">Send Roll Number</button>
+        </div>
+        <div class="form-group">
+            <select name="device" [(ngModel)]="mydevice">
+                <option *ngFor="let device of devices" >{{device}}</option>
+            </select>
+        </div>
+        {{mydevice}}
+        <div class="input-group">
+            <div class="input-group-prepend">
+               <span class="input-group-text" id="username" >Username : </span> 
+            </div>
+            <input 
+            type="text" 
+            name="name2" 
+            id="name2"
+            [(ngModel)]="color"
+            aria-label="user name enter maadappa" 
+            aria-describedby="username">
+        </div>
+    </div>
+</div>

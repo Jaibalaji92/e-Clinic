@@ -1,0 +1,108 @@
+<div class="row">
+        <div class="col-md-5">
+            <h2>User Register</h2>
+            <form #f="ngForm" (ngSubmit)="onRegister(f)" ngNativeValidate>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="username"
+                    name="username"
+                    ngModel
+                    required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input 
+                    type="password" 
+                    class="form-control" 
+                    id="pwd"
+                    name="password"
+                    ngModel
+                    required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="rpwd"> Confirm Password:</label>
+                    <input 
+                    type="password" 
+                    class="form-control" 
+                    id="rpwd"
+                    name="cpassword"
+                    ngModel
+                    required
+                    validateEqual>
+                </div>
+
+                <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email"
+                        name="email"
+                        ngModel
+                        required
+                        email
+                        >
+                    </div>
+
+
+                <div class="form-group">
+                    <label for="dob"> Date of Birth:</label>
+                    <input 
+                    type="date" 
+                    class="form-control" 
+                    id="dob"
+                    name="dob"
+                    ngModel
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <div class="" id="gender">
+                        <label class="radio-inline">
+                                <input 
+                                type="radio" 
+                                name="gender" 
+                                checked 
+                                value="male"
+                                ngModel
+                                required>
+                                Male
+                        </label>
+                        <label class="radio-inline">
+                            <input 
+                            type="radio" 
+                            name="gender" 
+                            value="female"
+                            ngModel
+                            required>
+                            Female
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address : </label>
+                    <textarea 
+                    class="form-control" 
+                    name="address" 
+                    id="address" 
+                    cols="40" 
+                    rows="10"
+                    ngModel
+                    required
+                    ></textarea>
+                </div> 
+                <button 
+                    type="submit" 
+                    class="btn btn-success"
+                    [disabled]="!f.valid">Register</button>
+            </form>
+        </div>
+    </div>
