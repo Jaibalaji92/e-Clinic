@@ -1,11 +1,8 @@
-export default class Person{
-   
-    constructor(
-        public name:string,
-        public dob:Date,
-        public gender:string,
-        public address:string,
-        public password:string,
-        public email:string
-        ){}         
+export default interface Person {
+    name: string;
+    dob: Date;
+    gender: string;
+    address: string;
+    password: string;
+    email: string;
 }
