@@ -8,16 +8,28 @@ import Person, {} from "../shared/Person.model";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, Person {
+  name: string;
+  dob: Date;
+  gender: string;
+  address: string;
+  password: string;
+  email: string;
 
-  constructor(private registerService:RegisterService) { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit() {
   }
 
-  onRegister(form:NgForm){
+  onRegister(form: NgForm) {
     const formdata = form.value;
-    let person = new Person(formdata.username, formdata.dob, formdata.gender, formdata.address, formdata.password, formdata.email);
+    const person: Person = {
+      name : formdata.username,
+      dob: formdata.dob,
+      gender : formdata.gender,
+      address: formdata.address,
+      password : formdata.password,
+      email: formdata.email};
     this.registerService.adduser(person);
   }
 
