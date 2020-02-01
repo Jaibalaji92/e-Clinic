@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { TempComponent } from './temp/temp.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'temp',
+    component: TempComponent
+  },
+  {
+    path: 'product',
+    component: ProductComponent
   },
   {
     path: '**',

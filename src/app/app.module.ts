@@ -9,7 +9,13 @@ import { RegisterComponent } from './register/register.component';
 import { RolesComponent } from './roles/roles.component';
 import { TempDatabindingComponent } from './temp-databinding/temp-databinding.component';
 import { HeaderComponent } from './header/header.component';
+import { TempComponent } from './temp/temp.component';
+import { ProductComponent } from './product/product.component';
 
+
+//ngrx 
+import {StoreModule} from '@ngrx/store';
+import { reducer } from './product/product.reduce';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +23,17 @@ import { HeaderComponent } from './header/header.component';
     RegisterComponent,
     RolesComponent,
     TempDatabindingComponent,
-    HeaderComponent
+    HeaderComponent,
+    TempComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('products', reducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

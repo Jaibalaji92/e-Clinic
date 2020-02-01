@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Products</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Product List</h6>
+    <ul>
+        <li *ngFor="let product of products">
+          {{product.name}} 
+          <span *ngIf="isCodeDisplayed" class="badge badge-danger">{{product.id}}</span>
+        </li>
+    </ul>
+    <input type="checkbox" (change)="displayCodeChanged($event.target.checked)"> Show Prod Code<br>
+  </div>
+</div>
