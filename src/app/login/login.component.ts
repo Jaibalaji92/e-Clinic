@@ -15,9 +15,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-      console.log(form.value);
-      console.log(form);
       this.router.navigate(['register']);
-
   }
 }

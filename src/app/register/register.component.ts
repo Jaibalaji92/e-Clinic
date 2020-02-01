@@ -30,7 +30,9 @@ export class RegisterComponent implements OnInit, Person {
       address: formdata.address,
       password : formdata.password,
       email: formdata.email};
-    this.registerService.adduser(person);
+    this.registerService.adduser(person).subscribe(res =>{
+      console.log(res);
+    });
   }
 
 }
